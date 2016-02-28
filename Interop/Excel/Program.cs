@@ -8,7 +8,13 @@ namespace Excel
 		{
 			DataStruct data = new DataStruct ();
 			IoWrite write = new IoWrite (data);
-			Console.WriteLine ("Hello World!");
+
+			//Набиране на данни в основната таблица
+			data.addRow ("Даниела", "Найденова", "23");
+			data.addRow ("Вуйчо", "Ваньо", "49");
+
+			//Проверка на таблицата
+			data.printTable ();
 		}
 	}
 }
