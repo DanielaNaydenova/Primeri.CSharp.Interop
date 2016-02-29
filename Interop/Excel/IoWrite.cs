@@ -17,13 +17,16 @@ namespace Excel
 			try {
 				//Междинни проверки
 				//Подготовка
-				excel = InteropExcel.Application ();
+				excel = new InteropExcel.ApplicationClass ();
 				if (excel == null) return false;
+
+				excel.Visible = false;
 
 				InteropExcel.Workbook workbook = excel.Workbooks.Add ();
 				if (workbook ==	null) return false;
 
-
+				InteropExcel.Worksheet sheet = (InteropExcel.Worksheet) workbook.Worksheets [1];
+				sheet.Name = "Таблица 1";
 
 				//Попълване на таблицата
 
@@ -61,7 +64,7 @@ namespace Excel
 
 		private string getPath ()
 		{
-			return System.IO.Path.Combine (AppDomain.CurrentDomain.BaseDirectory, "table1.xlsx");
+			return System.IO.Path.Combine (AppDomain.CurrentDomain.BaseDirectory, "table1.xlsm");
 		}
 	}
 }
