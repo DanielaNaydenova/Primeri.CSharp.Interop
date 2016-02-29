@@ -20,7 +20,8 @@ namespace Excel
 		public void printTable ()
 		{
 			try {
-				foreach (DataRow row in table)
+				foreach (DataRow row in table) 	//Дефинираме променлива от тип datarow и казваме да се изпълнява, 
+					//докато има елементи row in table
 				{
 					Console.WriteLine (row.firstName + " " + row.lastName + ", " + row.age + "");
 				}
